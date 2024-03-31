@@ -16,7 +16,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/clientes', pathMatch: 'full' },
   { path: 'clientes', component: ClientesComponent },
   { path: 'directivas', component: DirectivasComponent },
-  { path: 'form', component: FormComponent }
+  { path: 'form', component: FormComponent },
+  { path: 'form/:id', component: FormComponent }
 ]
 
 

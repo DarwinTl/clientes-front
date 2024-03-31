@@ -1,0 +1,31 @@
+<body class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+          Formulario de Registro
+        </div>
+        <div class="card-body">
+            <form class="row g-3" (ngSubmit)="create()">
+                <div class="col-md-6">
+                  <label for="inputNombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="inputNombre" [(ngModel)]="cliente.nombre" name="nombre">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputApellido" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="inputApellido" [(ngModel)]="cliente.apellido" name="apellido">
+                </div>
+                <div class="col-12">
+                  <label for="inputEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail" [(ngModel)]="cliente.email" name="email">
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-success me-2">Crear</button>
+                  <button type="button" class="btn btn-secondary ms-2" routerLink="/clientes">Cancelar</button>
+                </div>
+              </form>
+        </div>
+      </div>
+</body>
+
+
+
+
