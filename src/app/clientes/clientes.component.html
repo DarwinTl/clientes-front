@@ -5,7 +5,10 @@
     </div>
     <div class="card-body">
       <button type="button" class="btn btn-primary " routerLink="/form" >Nuevo Cliente</button>
-      <table class="table"> 
+      <div *ngIf="clientes?.length==0" class="alert alert-info mt-2">
+        No hay Clientes registrados
+      </div>
+      <table class="table mt-3" *ngIf="clientes?.length>0"> 
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -23,7 +26,10 @@
             <td>{{c.apellido}}</td>
             <td>{{c.createAt}}</td>
             <td>{{c.email}}</td>
-            <td><button type="button" class="btn btn-warning" [routerLink]="['/form',c.id]">Editar</button></td>
+            <td>
+              <button type="button" class="btn btn-warning" [routerLink]="['/form',c.id]">Editar</button>
+              <button type="button" class="btn btn-danger ms-2" (click)="deleteCliente(c)">Eliminar</button>
+            </td>
           </tr>
         </tbody>
     </table>

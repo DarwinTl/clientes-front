@@ -4,7 +4,7 @@
           Formulario de Registro
         </div>
         <div class="card-body">
-            <form class="row g-3" (ngSubmit)="create()">
+            <form class="row g-3">
                 <div class="col-md-6">
                   <label for="inputNombre" class="form-label">Nombre</label>
                   <input type="text" class="form-control" id="inputNombre" [(ngModel)]="cliente.nombre" name="nombre">
@@ -18,7 +18,11 @@
                   <input type="email" class="form-control" id="inputEmail" [(ngModel)]="cliente.email" name="email">
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-success me-2">Crear</button>
+                  <button type="submit" class="btn btn-success me-2" (click)="create()" *ngIf="!cliente.id else elseBlock">Crear</button>
+                  <ng-template #elseBlock>
+                    <button type="submit" class="btn btn-success me-2" (click)="update()" >Gurdar Cambios</button>
+                  </ng-template>
+                  
                   <button type="button" class="btn btn-secondary ms-2" routerLink="/clientes">Cancelar</button>
                 </div>
               </form>
